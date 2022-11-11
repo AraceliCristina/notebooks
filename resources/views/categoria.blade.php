@@ -17,8 +17,9 @@
     @endif
     </div>
 
-    <div class="col-10">    
+    <div class="col-10">  
     @include ("_produtos", [ 'lista' => $lista])
+    
     </div>
 @endsection
 

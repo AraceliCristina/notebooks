@@ -18,7 +18,7 @@
         </tr>
     </thead>
     <tbody>
-
+        @php $total = 0; @endphp
         @foreach($cart as $indice => $p)
         <tr>
             <td>
@@ -29,9 +29,24 @@
             <td>{{ $p->valor }}</td>
 
         </tr>
+        @php $total += $p->valor; @endphp
         @endforeach
     </tbody>
+    <tfooster>
+      <tr>
+        <td colspan="5">
+         -- Total do carrinho R$ {{ $total }}
+        </td>
+      </tr>
+    </tfooster>
   </table>
+
+  <form method="post" action="{{ route('carrinho_finalizar') }}">
+    @csrf
+    <input type="submit" value="finalizar Compra" class="btn btn-lg btn-success">
+    
+    
+  </form>
 
   @else 
     <p>Nenhum Item no Carrinho</p>

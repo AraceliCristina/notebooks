@@ -65,4 +65,12 @@ class ProdutoController extends Controller
         session(["cart" => $carrinho]);
         return redirect()->route("ver_carrinho");
     }
+
+    public function finalizar (Request $request){
+       
+            echo ($request);
+            
+
+        return redirect()->route("home");
+    }
 }
